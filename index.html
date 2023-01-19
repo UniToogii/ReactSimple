@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>React Practice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+     (() => {
+
+        // function showMessage() {
+        // alert('Hello');
+        // }
+        // const name = 'taguchi';
+        // ReactDOM.render(
+    // #03
+        // <p>Hello! {name.toUpperCase()}</p>,
+        // 上に TAKUCHI 出ます。
+        // <p>Hello</p><p>World</p>, errorになります。
+
+    // #04 JSX
+        // <div>
+        //   <p>Hello</p>
+        //   <hr/>
+        //   <p>World</p>
+        // </div>,
+
+    // #05 Camelcase and onclick の時messageが出るようにしました。
+        // class -name 
+        // <div className="box"></div>,
+        // style
+        // <div style={{width:100, height:100, backgroundColor:'tomato'}}></div>,
+        // <div style={{width:100, height:100, backgroundColor:'tomato'}} onClick="showMessage"></div>,
+        // <div style={{width:100, height:100, backgroundColor:'tomato'}} onClick="{showMessage}"></div>,
+        // <div style={{width:100, height:100, backgroundColor:'tomato'}} 
+        // onClick={showMessage}></div>,
+        // document.getElementById('root')
+
+    // #06 Component (Counter) prop 
+        //  function Counter() {
+        // return <div>0</div>;
+        // }
+        //   function Counter(props) {
+        //     return <div>0 {props.color}</div>;
+        //   }
+        //  ReactDOM.render(
+        // <div>
+        //    <Counter color="tomato"/>
+        //    <Counter color="skyblue"/>
+        //    <Counter color="limegreen"/>
+        // </div>,
+        // document.getElementById('root')
+        // propを変えるときに error になります 
+        // function Counter(props) {
+        //  props.color = 'red';
+        //  return <div>0 {props.color}</div>;
+        // }
+
+      // #07 Prop 
+            // function Counter(props) {
+             // return <div>0 {props.color}</div>;
+             // return <div style={{backgroundColor:props.color}}>0</div>;
+            //     return <li style={{backgroundColor:props.color}}>0</li>;
+            // }
+            // ReactDOM.render(
+            //     <div className="container">
+            //     <ul>
+            //     <Counter color="tomato"/>
+            //     <Counter color="skyblue"/>
+            //     <Counter color="limegreen"/>
+            // </ul>
+            // </div>,
+            // document.getElementById('root')
+    // #08 Counterの Styling on Css
+    // #09 onClick
+
+        //  function Counter(props) {
+
+            // function countUp() {
+            //   alert('count up!');
+            // }
+            // function countUp(color) {
+            //   alert(color);
+            // }
+            // function countUp(e, color) {
+            //   e.preventDefault();
+            //   alert(color);
+            // }
+
+            // return (
+            //   <li style={{backgroundColor:props.color}} onClick={countUp}>
+            //     0
+            //   </li>
+            // );
+            // return (
+            //   <li style={{backgroundColor:props.color}} onClick={() => countUp(props.color)}>
+            //     0
+            //   </li>
+            // );
+            //     return (
+            //       <li style={{backgroundColor:props.color}}>
+            //         <a href="#" onClick={e => countUp(e, props.color)}>
+            //           0
+            //         </a>
+            //       </li>
+            //     );
+            //   }
+
+            //   ReactDOM.render(
+            //     <div className="container">
+            //       <ul>
+            //         <Counter color="tomato"/>
+            //         <Counter color="skyblue"/>
+            //         <Counter color="limegreen"/>
+            //       </ul>
+            //     </div>,
+            //     document.getElementById('root')
+
+        //#10 Classでの書き換え
+            // class Counter extends React.Component {
+            // render() {
+            //   return (
+            //     <li style={{backgroundColor:this.props.color}}>
+            //       0
+            //     </li>
+            //   );
+            // }
+        //     class Counter extends React.Component {
+        //     constructor(props) {
+        //       super(props);
+        //       this.state = {
+        //         count: 10
+        //         // message: 'hello!'
+        //       };
+        //     }
+        //     render() {
+        //       return (
+        //         <li style={{backgroundColor:this.props.color}}>
+        //           {this.state.count}
+        //         </li>
+        //       );
+        //     }
+        //   }
+
+        //   ReactDOM.render(
+        //     <div className="container">
+        //       <ul>
+        //         <Counter color="tomato"/>
+        //         <Counter color="skyblue"/>
+        //         <Counter color="limegreen"/>
+        //       </ul>
+        //     </div>,
+        //     document.getElementById('root')
+
+    //#10 Classでの書き換え
+    // function Counter(props) {
+    //     return (
+    //       <li style={{backgroundColor:props.counter.color}}>
+    //         {props.counter.id}:{props.counter.count}
+    //       </li>
+    //     );
+    //   }
+
+    //   class App extends React.Component {
+    //     constructor() {
+    //       super();
+    //       this.state = {
+    //         counters: [
+    //           {id: 'A', count: 0, color: 'tomato'},
+    //           {id: 'B', count: 0, color: 'skyblue'},
+    //           {id: 'C', count: 0, color: 'limegreen'}
+    //         ]
+    //       };
+    //     }
+    //     render() {
+    //       return (
+    //         <div className="container">
+    //           <ul>
+    //             <Counter counter={this.state.counters[0]}/>
+    //             <Counter counter={this.state.counters[1]}/>
+    //             <Counter counter={this.state.counters[2]}/>
+    //           </ul>
+    //           <div>TOTAL INVENTORY: 3</div>
+    //         </div>
+    //       );
+    //     }
+    //   }
+
+    //   ReactDOM.render(
+    //     <App/>,
+    //     document.getElementById('root')
+
+    // #16 CounterList ループ処理を行う際の注意点
+    // # Counter up , counter完成
+    function Counter(props) {
+        return (
+          <li style={{backgroundColor:props.counter.color}} onClick={() => props.countUp(props.counter)}>
+            {props.counter.id}-({props.counter.count})
+          </li>
+        );
+      }
+
+      function CounterList(props) {
+        const counters = props.counters.map(counter => {
+          return (
+            <Counter
+              counter={counter}
+              key={counter.id}
+              countUp={props.countUp}
+            />
+          );
+        });
+        return (
+          <ul>
+            {counters}
+          </ul>
+        );
+      }
+
+      class App extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            counters: [
+              {id: 'A', count: 0, color: 'tomato'},
+              {id: 'B', count: 0, color: 'skyblue'},
+              {id: 'C', count: 0, color: 'limegreen'},
+              {id: 'D', count: 0, color: 'gray'},
+              {id: 'E', count: 0, color: 'pink'}
+            ],
+            total: 0
+          };
+          this.countUp = this.countUp.bind(this);
+        }
+        countUp(counter) {
+          this.setState(prevState => {
+            const counters = prevState.counters.map(counter => {
+              return {id: counter.id, count: counter.count, color: counter.color};
+            });
+            const pos = counters.map(counter => {
+              return counter.id;
+            }).indexOf(counter.id);
+            counters[pos].count++;
+            return {
+              counters: counters,
+              total: prevState.total + 1
+            };
+          });
+        }
+        render() {
+          return (
+            <div className="container">
+              <CounterList
+                counters={this.state.counters}
+                countUp={this.countUp}
+              />
+              <div>TOTAL INVENTORY: {this.state.total}</div>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <App/>,
+        document.getElementById('root')
+      );
+    })();
+  </script>
+</body>
+</html>
